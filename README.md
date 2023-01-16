@@ -1,6 +1,6 @@
 # Hello_python
  First git repo
 
-IT'sMOre than a university\n
-Polyakov Dmitrii\n
+IT'sMOre than a university
+Polyakov Dmitrii
 polyakovdy94@gmail.com
