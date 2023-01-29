@@ -37,4 +37,4 @@ print(counted_with_attribute(str, exceptions = r'.,;:!?-()""'))
 print(counted_with_attribute(str, splitter = r' '))
 
 #5. Подсчитывает количество предложений
-print(counted_with_attribute(str, splitter = r'.,:!?-()""'))
+print(counted_with_attribute(str, splitter = r'.!?'))
