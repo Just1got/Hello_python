@@ -11,14 +11,13 @@ def read_file(path):
 # Params: str - строка, splitter - разделители для подсчета, exceptions - исключить символы из строки
 # Return: значение подсчета
 def counted_with_attribute(str, splitter = None, exceptions = ''):
-    text = str.replace('\n', ' ')
-    text = text.translate({ord(i): None for i in exceptions})
+    text = str.replace('\n', ' ')   #заменим перенос строки на пробелы. Абзацы считать не будем
+    text = text.translate({ord(i): None for i in exceptions})   #удаляем все элементы exceptions
     if splitter is not None:
         for item in splitter:
             text = text.replace(item, '.')
         text = text.split('.')
-        if text[-1] == '':
-            text.pop()
+        text = [el for el in text if el != '']   #удаляем все пустые элементы
     return len(text)
 
 str = read_file("practice-1-main/aristotle.txt")
