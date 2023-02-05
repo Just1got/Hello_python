@@ -1,3 +1,4 @@
+import sys
 # Функция открытия файла
 # Params: path - путь к файлу
 # Return: считанная строка
@@ -20,20 +21,23 @@ def counted_with_attribute(str, splitter = None, exceptions = ''):
         text = [el for el in text if el != '']   #удаляем все пустые элементы
     return len(text)
 
-str = read_file("practice-1-main/aristotle.txt")
-#str = read_file('practice-1-main/h.txt')
 
-#1. Подсчитывает общее количество символов в файле
-print(counted_with_attribute(str))
+if __name__ == "__main__":
+    str = read_file(sys.argv[1])
+    #str = read_file("practice-1-main/aristotle.txt")
+    #str = read_file('practice-1-main/h.txt')
 
-#2. Подсчитывает общее количесто символов без пробелов
-print(counted_with_attribute(str, exceptions = ' '))
+    #1. Подсчитывает общее количество символов в файле
+    print(counted_with_attribute(str))
 
-#3. Подсчитывает количество символов без знаков препинания
-print(counted_with_attribute(str, exceptions = r'.,;:!?-()""'))
+    #2. Подсчитывает общее количесто символов без пробелов
+    print(counted_with_attribute(str, exceptions=' '))
 
-#4. Подсчитывает количество слов в файле
-print(counted_with_attribute(str, splitter = r' '))
+    #3. Подсчитывает количество символов без знаков препинания
+    print(counted_with_attribute(str, exceptions=r'.,;:!?-()""'))
 
-#5. Подсчитывает количество предложений
-print(counted_with_attribute(str, splitter = r'.!?'))
+    #4. Подсчитывает количество слов в файле
+    print(counted_with_attribute(str, splitter=r' '))
+
+    #5. Подсчитывает количество предложений
+    print(counted_with_attribute(str, splitter=r'.!?'))
